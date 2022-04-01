@@ -65,11 +65,11 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
+	awful.layout.suit.tile.left,
+    awful.layout.suit.tile,
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
-    awful.layout.suit.tile,
     awful.layout.suit.spiral,
-	awful.layout.suit.tile.left,
     awful.layout.suit.floating,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
@@ -536,6 +536,24 @@ awful.rules.rules = {
      { rule = { class = "krita" },
        properties = {tag = "4" } },
 
+     { rule = { class = "libreoffice-impress" },
+       properties = {tag = "4" } },
+
+     { rule = { class = "libreoffice-base" },
+       properties = {tag = "4" } },
+
+     { rule = { class = "libreoffice-calc" },
+       properties = {tag = "4" } },
+
+     { rule = { class = "libreoffice-draw" },
+       properties = {tag = "4" } },
+
+     { rule = { class = "libreoffice-math" },
+       properties = {tag = "4" } },
+
+     { rule = { class = "libreoffice-writer" },
+       properties = {tag = "4" } },
+
      { rule = { class = "Godot" },
        properties = {tag = "4" } },
 
@@ -641,7 +659,5 @@ end
 awful.util.spawn_with_shell("pkill wallpaper-autoc")
 awful.util.spawn_with_shell("~/./wallpaper-autochange")
 
-awful.util.spawn_with_shell("killall -q polybar")
-awful.util.spawn_with_shell("while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done")
-awful.util.spawn_with_shell("polybar hi")
 
+awful.util.spawn_with_shell("~/.config/polybar/launch-polybar")
